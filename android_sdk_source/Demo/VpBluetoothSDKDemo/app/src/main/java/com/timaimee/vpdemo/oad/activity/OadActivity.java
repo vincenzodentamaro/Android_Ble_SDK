@@ -87,15 +87,15 @@ public class OadActivity extends Activity implements View.OnClickListener {
 
     private void initDeviceStateView() {
         StringBuffer sb = new StringBuffer();
-        sb.append("设备地址：" + oadSetting.getDeviceAddress());
-        sb.append("\n");
-        sb.append("设备编号：" + oadSetting.getDeviceNumber());
-        sb.append("\n");
-        sb.append("正式版本号：" + oadSetting.getDeviceVersion());
-        sb.append("\n");
-        sb.append("测试版本号：" + oadSetting.getDeviceTestVersion());
-        sb.append("\n");
-        sb.append("是否DFU模式：" + oadSetting.isOadModel());
+        sb.append ("device address:" + oadSetting.getDeviceAddress ());
+         sb.append ("\n");
+ sb.append ("device number:" + oadSetting.getDeviceNumber ());
+ sb.append ("\n");
+ sb.append ("Official version number:" + oadSetting.getDeviceVersion ());
+ sb.append ("\n");
+ sb.append ("Test version number:" + oadSetting.getDeviceTestVersion ());
+ sb.append ("\n");
+ sb.append ("Whether DFU mode:" + oadSetting.isOadModel ());
         deviceStateTv.setText(sb.toString());
 
     }
@@ -117,45 +117,45 @@ public class OadActivity extends Activity implements View.OnClickListener {
     private void checkVersionAndFile() {
         oadSetting.setDeviceVersion("00.23.00");
         oadSetting.setDeviceTestVersion("00.23.00.00");
-        Logger.t(TAG).i("升级前：版本验证->文件验证->查找目标设备");
+        Logger.t(TAG).i("Before upgrading: version verification-> file verification-> find target device");
         VPOperateManager.getMangerInstance(mContext).checkVersionAndFile(oadSetting, new OnUpdateCheckListener() {
             @Override
             public void onNetVersionInfo(int deviceNumber, String deviceVersion, String des) {
-                Logger.t(TAG).i("服务器版本信息,设备号=" + deviceNumber + ",最新版本=" + deviceVersion + ",升级描述=" + des);
+                Logger.t(TAG).i("Server version information, device number=" + deviceNumber + ",The latest version of=" + deviceVersion + ",Upgrade description=" + des);
             }
 
             @Override
             public void onDownLoadOadFile(float progress) {
-                Logger.t(TAG).i("从服务器下载文件,进度=" + progress);
+                Logger.t(TAG).i("Download file from server, progress=" + progress);
             }
 
             @Override
             public void onCheckFail(int endState) {
                 switch (endState) {
                     case OadErrorState.UNCONNECT_NETWORK:
-                        Logger.t(TAG).i("网络出错");
-                        break;
-                    case OadErrorState.UNCONNECT_SERVER:
-                        Logger.t(TAG).i("服务器连接不上");
-                        break;
-                    case OadErrorState.SERVER_NOT_HAVE_NEW:
-                        Logger.t(TAG).i("服务器无此版本");
-                        break;
-                    case OadErrorState.DEVICE_IS_NEW:
-                        Logger.t(TAG).i("设备是最新版本");
-                        break;
-                    case OadErrorState.OAD_FILE_UNEXITS:
-                        Logger.t(TAG).i("文件不存在");
-                        break;
-                    case OadErrorState.OAD_FILE_MD5_UNSAME:
-                        Logger.t(TAG).i("文件md5不一致");
-                        break;
+                        Logger.t (TAG) .i ("Network error");
+                         break;
+                         case OadErrorState.UNCONNECT_SERVER:
+                         Logger.t (TAG) .i ("The server cannot connect");
+                         break;
+                         case OadErrorState.SERVER_NOT_HAVE_NEW:
+                         Logger.t (TAG) .i ("The server does not have this version");
+                         break;
+                         case OadErrorState.DEVICE_IS_NEW:
+                         Logger.t (TAG) .i ("The device is the latest version");
+                         break;
+                         case OadErrorState.OAD_FILE_UNEXITS:
+                         Logger.t (TAG) .i ("File does not exist");
+                         break;
+                         case OadErrorState.OAD_FILE_MD5_UNSAME:
+                         Logger.t (TAG) .i ("File md5 is inconsistent");
+                         break;
                 }
             }
 
             @Override
             public void onCheckSuccess(String oadFileName) {
-                Logger.t(TAG).i("版本确认无误，文件确认无误");
+                Logger.t(TAG).i("Version confirmation is correct, file confirmation is correct");
                 mOadFileName = oadFileName;
                 if (!TextUtils.isEmpty(mOadFileName)) {
                     isCanEnterOadModel = true;
@@ -164,7 +164,7 @@ public class OadActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void findOadDevice(String oadAddress) {
-                Logger.t(TAG).i("找到OAD模式下的设备了");
+                Logger.t(TAG).i("Found the device in OAD mode");
                 mOadAddress = oadAddress;
                 if (!TextUtils.isEmpty(mOadAddress)) {
                     isFindOadDevice = true;
@@ -190,7 +190,7 @@ public class OadActivity extends Activity implements View.OnClickListener {
 
 
     private void startOad() {
-        Logger.t(TAG).i("执行升级程序，最多尝试5次");
+        Logger.t(TAG).i("Perform upgrade procedure, try up to 5 times");
         showProgressBar();
         Boolean isBinder = false;
         final DfuServiceInitiator dfuServiceInitiator = new DfuServiceInitiator(mOadAddress)
@@ -342,8 +342,8 @@ public class OadActivity extends Activity implements View.OnClickListener {
     private void oadSuccess() {
         isFindOadDevice = false;
         disMissProgressBar();
-        Toast.makeText(mContext, "升级成功", Toast.LENGTH_SHORT).show();
-        Logger.t(TAG).e("升级成功");
+        Toast.makeText(mContext, "update successed", Toast.LENGTH_SHORT).show();
+        Logger.t(TAG).e("update successed");
         this.finish();
     }
 
@@ -369,9 +369,9 @@ public class OadActivity extends Activity implements View.OnClickListener {
 
     private void showOadFailDialog() {
         isFindOadDevice = false;
-        String mStringContent = "升级失败，设备名字会变成DfuLang";
-        String mStringTitle = "提示";
-        String mStringOk = "知道了";
+        String mStringContent = "The upgrade fails and the device name becomes DfuLang";
+        String mStringTitle = "prompt";
+        String mStringOk = "OK";
         AlertDialog oadFailDialog = new AlertDialog.Builder(mContext).setTitle(mStringTitle)
                 .setIconAttribute(android.R.attr.alertDialogIcon).setCancelable(false)
                 .setMessage(mStringContent)

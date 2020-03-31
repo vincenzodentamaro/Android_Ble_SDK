@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="PTT检测"
+            android:text="PTT detection"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
@@ -35,21 +35,21 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:textSize="18sp"
+        android:text="ppt mode"
         android:textColor="@color/colorAccent"
-        android:text="ppt模式" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/ptt_sign_open"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="读取ptt信号" />
+        android:text="Read ptt signal" />
 
     <Button
         android:id="@+id/ptt_sign_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="关闭ptt信号" />
+        android:text="Turn off ptt signal" />
 </LinearLayout>

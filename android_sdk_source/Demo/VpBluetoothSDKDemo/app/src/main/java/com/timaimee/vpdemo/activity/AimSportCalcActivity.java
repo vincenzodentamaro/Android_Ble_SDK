@@ -51,14 +51,14 @@ public class AimSportCalcActivity extends Activity implements RadioGroup.OnCheck
     private String setPersonInfo(ESex sex, float height, float weight, int stepcount) {
 
         StringBuffer sb = new StringBuffer();
-        String perSonInfo = "个人信息,性别=" + sex + ",身高=" + height + ",体重=" + weight;
+        String perSonInfo = "Personal information, gender=" + sex + ",height=" + height + ",weight=" + weight;
         String bmi = "BMI=" + SportUtil.getBMI(height, weight);
-        String stepLength = "步长=" + SportUtil.getStepLength(height);
-        String aimTip = "根据性别、身高、体重算出来的目标值,是否采用新的计算方法=" + isnewsportcalc;
+        String stepLength = "Stride=" + SportUtil.getStepLength(height);
+        String aimTip = "Whether to use the new calculation method based on the target value calculated based on gender, height and weight=" + isnewsportcalc;
         String aimSportCount = "AimSportCount=" + SportUtil.getAimSportCount(sex, weight, height);
         String aimDistance = "AimDistance=" + SportUtil.getAimDistance(sex, weight, height);
         String aimKcalNew = "AimKcal=" + SportUtil.getAimKcal(sex, weight, height, isnewsportcalc);
-        String sportCalc = "根据性别、身高、体重,步数算出来的步行距离以及消耗卡路里，步数=" + stepcount;
+        String sportCalc = "Walking distance calculated based on gender, height, weight, steps, calories burned, steps=" + stepcount;
         String distance_1 = "getDistance1=" + SportUtil.getDistance1(stepcount, height);
         String distance_2 = "getDistance2=" + SportUtil.getDistance2(stepcount, height);
         String distance_3 = "getDistance3=" + SportUtil.getDistance3(stepcount, height);

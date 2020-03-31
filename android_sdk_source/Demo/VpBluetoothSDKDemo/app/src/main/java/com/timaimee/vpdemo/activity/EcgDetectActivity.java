@@ -82,7 +82,7 @@ public class EcgDetectActivity extends Activity implements View.OnClickListener 
     }
 
     /**
-     * 写入的状态返回
+     * Write status returned
      */
     class WriteResponse implements IBleWriteResponse {
 

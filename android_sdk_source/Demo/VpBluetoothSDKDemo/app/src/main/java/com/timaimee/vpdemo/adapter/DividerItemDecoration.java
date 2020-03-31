@@ -83,7 +83,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
         for (int i = 0; i < childCount; i++) {
             if (!isDrawLastLine && i == childCount - 1) {
-                //划最后一条
+                //Draw the last
                 return;
             }
             final View child = parent.getChildAt(i);

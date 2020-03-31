@@ -46,18 +46,18 @@ public class InstitutionActivity extends Activity implements View.OnClickListene
 
 
         int lbcm = InstitutionUtil.cmToLBCM(height);
-        String cmToLbcm = "公制cm-->英制cm," + height + "cm->" + lbcm / 12 + "\'" + lbcm % 12 + "\'\'";
-        String lbcmTocm = "英制cm-->公制cm," + lbcm / 12 + "\'" + lbcm % 12 + "\'\'->" + InstitutionUtil.lbcmToCM(lbcm) + "cm";
+        String cmToLbcm = "Metric cm-> Imperial cm," + height + "cm->" + lbcm / 12 + "\'" + lbcm % 12 + "\'\'";
+        String lbcmTocm = "Imperial cm-> Metric cm," + lbcm / 12 + "\'" + lbcm % 12 + "\'\'->" + InstitutionUtil.lbcmToCM(lbcm) + "cm";
 
         float lbkg = InstitutionUtil.kgToLBKG(weight);
-        String kgToLbkg = "公制kg-->英制kg, " + weight + "kg->" + lbkg + "Lbs";
-        String lbkgTokg = "英制kg-->公制kg, " + lbkg + "Lbs->" + InstitutionUtil.lbkgToKG(lbkg) + "kg";
+        String kgToLbkg = "Metric kg-> Imperial kg, " + weight + "kg->" + lbkg + "Lbs";
+        String lbkgTokg = "Imperial kg-> Metric kg, " + lbkg + "Lbs->" + InstitutionUtil.lbkgToKG(lbkg) + "kg";
 
         double lbkm1 = InstitutionUtil.kmToLBKM1(distance);
         double lbkm2 = InstitutionUtil.kmToLBKM2(distance);
-        String kmToLbkm1 = "公制km-->英制km,一位小数," + distance + "km->" + lbkm1 + "mile";
-        String kmToLbkm2 = "公制km-->英制km,二位小数," + distance + "km->" + InstitutionUtil.kmToLBKM2(distance) + "mile";
-        String LbkmTokm = "英制km-->公制km,2位小数," + lbkm2 + "mile->" + InstitutionUtil.LBkmTokm(lbkm2) + "km";
+        String kmToLbkm1 = "Metric km-> Imperial km, one decimal place," + distance + "km->" + lbkm1 + "mile";
+        String kmToLbkm2 = "Metric km-> Imperial km, two decimal places," + distance + "km->" + InstitutionUtil.kmToLBKM2(distance) + "mile";
+        String LbkmTokm = "Imperial km-> Metric km, 2 decimal places," + lbkm2 + "mile->" + InstitutionUtil.LBkmTokm(lbkm2) + "km";
 
         sb.append(kmToLbkm1);
         sb.append("\n");

@@ -280,7 +280,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
 
     /**
-     * 密码验证获取以下信息
+     * Password verification to get the following information
      */
     int watchDataDay = 3;
     int contactMsgLength = 0;
@@ -389,7 +389,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             boolean isOpenPrivateModel = true;
             boolean isAngioAdjuste = false;
             BpSetting bpSetting = new BpSetting(isOpenPrivateModel, 111, 88);
-            //是否开启动态血压调整模式，功能标志位在密码验证的返回
+            //Whether to enable the dynamic blood pressure adjustment mode, the function flag is returned in the password verification
             bpSetting.setAngioAdjuste(isAngioAdjuste);
             VPOperateManager.getMangerInstance(mContext).settingDetectBP(writeResponse, new IBPSettingDataListener() {
                 @Override
@@ -414,7 +414,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             boolean isOpenPrivateModel = false;
             boolean isAngioAdjuste = true;
             BpSetting bpSetting = new BpSetting(isOpenPrivateModel, 111, 88);
-            //是否开启动态血压调整模式，功能标志位在密码验证的返回
+            //Whether to enable the dynamic blood pressure adjustment mode, the function flag is returned in the password verification
             bpSetting.setAngioAdjuste(isAngioAdjuste);
             VPOperateManager.getMangerInstance(mContext).settingDetectBP(writeResponse, new IBPSettingDataListener() {
                 @Override
@@ -428,7 +428,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             boolean isOpenPrivateModel = false;
             boolean isAngioAdjuste = true;
             BpSetting bpSetting = new BpSetting(isOpenPrivateModel, 111, 88);
-            //是否开启动态血压调整模式，功能标志位在密码验证的返回
+            //Whether to enable the dynamic blood pressure adjustment mode, the function flag is returned in the password verification
             bpSetting.setAngioAdjuste(isAngioAdjuste);
             VPOperateManager.getMangerInstance(mContext).cancelAngioAdjust(writeResponse, new IBPSettingDataListener() {
                 @Override
@@ -497,7 +497,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSportStep(writeResponse, new ISportDataListener() {
                 @Override
                 public void onSportDataChange(SportData sportData) {
-                    String message = "当前计步:\n" + sportData.toString();
+                    String message = "Current step count:\n" + sportData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -506,7 +506,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).syncPersonInfo(writeResponse, new IPersonInfoDataListener() {
                 @Override
                 public void OnPersoninfoDataChange(EOprateStauts EOprateStauts) {
-                    String message = "同步个人信息:\n" + EOprateStauts.toString();
+                    String message = "Sync personal information:\n" + EOprateStauts.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -543,7 +543,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingAlarm(writeResponse, new IAlarmDataListener() {
                 @Override
                 public void onAlarmDataChangeListener(AlarmData alarmData) {
-                    String message = "设置闹钟:\n" + alarmData.toString();
+                    String message = "Set alarm:\n" + alarmData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -552,7 +552,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readAlarm(writeResponse, new IAlarmDataListener() {
                 @Override
                 public void onAlarmDataChangeListener(AlarmData alarmData) {
-                    String message = "读取闹钟:\n" + alarmData.toString();
+                    String message = "Read alarm:\n" + alarmData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -561,7 +561,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readAlarm2(writeResponse, new IAlarm2DataListListener() {
                 @Override
                 public void onAlarmDataChangeListListener(AlarmData2 alarmData2) {
-                    String message = "读取闹钟[新版]:\n" + alarmData2.toString();
+                    String message = "Read alarm [new version]:\n" + alarmData2.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -573,7 +573,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).deleteAlarm2(writeResponse, new IAlarm2DataListListener() {
                 @Override
                 public void onAlarmDataChangeListListener(AlarmData2 alarmData2) {
-                    String message = "删除闹钟[新版]:\n" + alarmData2.toString();
+                    String message = "Delete alarm [new version]:\n" + alarmData2.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -584,7 +584,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).addAlarm2(writeResponse, new IAlarm2DataListListener() {
                 @Override
                 public void onAlarmDataChangeListListener(AlarmData2 alarmData2) {
-                    String message = "添加闹钟[新版]:\n" + alarmData2.toString();
+                    String message = "Add alarm clock [new version]:\n" + alarmData2.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -598,7 +598,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).modifyAlarm2(writeResponse, new IAlarm2DataListListener() {
                 @Override
                 public void onAlarmDataChangeListListener(AlarmData2 alarmData2) {
-                    String message = "修改闹钟[新版]:\n" + alarmData2.toString();
+                    String message = "Modify the alarm clock [new version]:\n" + alarmData2.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -607,7 +607,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingLongSeat(writeResponse, new LongSeatSetting(10, 35, 11, 45, 60, true), new ILongSeatDataListener() {
                 @Override
                 public void onLongSeatDataChange(LongSeatData longSeat) {
-                    String message = "设置久坐-打开:\n" + longSeat.toString();
+                    String message = "Set sedentary-open:\n" + longSeat.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -617,7 +617,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onLongSeatDataChange(LongSeatData longSeat) {
-                    String message = "设置久坐-关闭:\n" + longSeat.toString();
+                    String message = "Set sedentary-off:\n" + longSeat.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -626,7 +626,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readLongSeat(writeResponse, new ILongSeatDataListener() {
                 @Override
                 public void onLongSeatDataChange(LongSeatData longSeat) {
-                    String message = "设置久坐-读取:\n" + longSeat.toString();
+                    String message = "Set sedentary-read:\n" + longSeat.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -635,7 +635,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingDeviceLanguage(writeResponse, new ILanguageDataListener() {
                 @Override
                 public void onLanguageDataChange(LanguageData languageData) {
-                    String message = "设置语言(中文):\n" + languageData.toString();
+                    String message = "Set language (Chinese):\n" + languageData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -644,7 +644,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingDeviceLanguage(writeResponse, new ILanguageDataListener() {
                 @Override
                 public void onLanguageDataChange(LanguageData languageData) {
-                    String message = "设置语言(英文):\n" + languageData.toString();
+                    String message = "Set language (English):\n" + languageData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -653,7 +653,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readBattery(writeResponse, new IBatteryDataListener() {
                 @Override
                 public void onDataChange(BatteryData batteryData) {
-                    String message = "电池等级:\n" + batteryData.getBatteryLevel() + "\n" + "电量:" + batteryData.getBatteryLevel() * 25 + "%";
+                    String message = "Battery level:\n" + batteryData.getBatteryLevel() + "\n" + "Battery:" + batteryData.getBatteryLevel() * 25 + "%";
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -662,7 +662,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readNightTurnWriste(writeResponse, new INightTurnWristeDataListener() {
                 @Override
                 public void onNightTurnWristeDataChange(NightTurnWristeData nightTurnWristeData) {
-                    String message = "夜间转腕-读取:\n" + nightTurnWristeData.toString();
+                    String message = "Wrist Turn at Night-Read:\n" + nightTurnWristeData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -671,7 +671,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingNightTurnWriste(writeResponse, new INightTurnWristeDataListener() {
                 @Override
                 public void onNightTurnWristeDataChange(NightTurnWristeData nightTurnWristeData) {
-                    String message = "夜间转腕-打开:\n" + nightTurnWristeData.toString();
+                    String message = "Turn wrist at night-open:\n" + nightTurnWristeData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -680,7 +680,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingNightTurnWriste(writeResponse, new INightTurnWristeDataListener() {
                 @Override
                 public void onNightTurnWristeDataChange(NightTurnWristeData nightTurnWristeData) {
-                    String message = "夜间转腕-关闭:\n" + nightTurnWristeData.toString();
+                    String message = "Night wrist turn-close:\n" + nightTurnWristeData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -692,7 +692,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingNightTurnWriste(writeResponse, new INightTurnWristeDataListener() {
                 @Override
                 public void onNightTurnWristeDataChange(NightTurnWristeData nightTurnWristeData) {
-                    String message = "夜间转腕-" + isOpen + ":\n" + nightTurnWristeData.toString();
+                    String message = "Turn wrist at night-" + isOpen + ":\n" + nightTurnWristeData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -705,7 +705,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingNightTurnWriste(writeResponse, new INightTurnWristeDataListener() {
                 @Override
                 public void onNightTurnWristeDataChange(NightTurnWristeData nightTurnWristeData) {
-                    String message = "夜间转腕-" + isOpen + ":\n" + nightTurnWristeData.toString();
+                    String message = "Turn wrist at night-" + isOpen + ":\n" + nightTurnWristeData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -717,7 +717,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingFindPhoneListener(new IFindPhonelistener() {
                 @Override
                 public void findPhone() {
-                    String message = "(监听到手环要查找手机)-where is the phone,make some noise!";
+                    String message = "(Listening to the phone to find the phone)-where is the phone,make some noise!";
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -726,7 +726,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readCustomSetting(writeResponse, new ICustomSettingDataListener() {
                 @Override
                 public void OnSettingDataChange(CustomSettingData customSettingData) {
-                    String message = "个性化状态-公英制/时制(12/24)/5分钟测量开关(心率/血压)-读取:\n" + customSettingData.toString();
+                    String message = "Personalized status-metric / English / hour (12/24) / 5 minute measurement switch (heart rate / blood pressure)-read:\n" + customSettingData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -754,7 +754,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).changeCustomSetting(writeResponse, new ICustomSettingDataListener() {
                 @Override
                 public void OnSettingDataChange(CustomSettingData customSettingData) {
-                    String message = "个性化状态-公英制/时制(12/24)/5分钟测量开关(心率/血压)-设置:\n" + customSettingData.toString();
+                    String message = "Personalized status-metric / English / hour (12/24) / 5 minute measurement switch (heart rate / blood pressure)-setting:\n" + customSettingData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -765,7 +765,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).setttingCheckWear(writeResponse, new ICheckWearDataListener() {
                 @Override
                 public void onCheckWearDataChange(CheckWearData checkWearData) {
-                    String message = "佩戴检测-打开:\n" + checkWearData.toString();
+                    String message = "Wear detection-open:\n" + checkWearData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -776,7 +776,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).setttingCheckWear(writeResponse, new ICheckWearDataListener() {
                 @Override
                 public void onCheckWearDataChange(CheckWearData checkWearData) {
-                    String message = "佩戴检测-关闭:\n" + checkWearData.toString();
+                    String message = "Wear detection-off:\n" + checkWearData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -785,7 +785,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingFindDevice(writeResponse, new IFindDeviceDatalistener() {
                 @Override
                 public void onFindDevice(FindDeviceData findDeviceData) {
-                    String message = "防丢-打开:\n" + findDeviceData.toString();
+                    String message = "Anti-lost-open:\n" + findDeviceData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -794,7 +794,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingFindDevice(writeResponse, new IFindDeviceDatalistener() {
                 @Override
                 public void onFindDevice(FindDeviceData findDeviceData) {
-                    String message = "防丢-关闭:\n" + findDeviceData.toString();
+                    String message = "Anti-lost-close:\n" + findDeviceData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -803,7 +803,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readFindDevice(writeResponse, new IFindDeviceDatalistener() {
                 @Override
                 public void onFindDevice(FindDeviceData findDeviceData) {
-                    String message = "防丢-读取:\n" + findDeviceData.toString();
+                    String message = "Anti-lost-read:\n" + findDeviceData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -812,7 +812,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSocialMsg(writeResponse, new ISocialMsgDataListener() {
                 @Override
                 public void onSocialMsgSupportDataChange(FunctionSocailMsgData socailMsgData) {
-                    String message = " 社交信息提醒-读取:\n" + socailMsgData.toString();
+                    String message = " Social Information Reminder-Read:\n" + socailMsgData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -836,24 +836,24 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingSocialMsg(writeResponse, new ISocialMsgDataListener() {
                 @Override
                 public void onSocialMsgSupportDataChange(FunctionSocailMsgData socailMsgData) {
-                    String message = " 社交信息提醒-设置:\n" + socailMsgData.toString();
+                    String message = "Social Information Reminder-Settings:\n" + socailMsgData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
             }, socailMsgData);
         } else if (oprater.equals(SOCIAL_MSG_SEND)) {
-            /**电话,可以只传电话号码**/
+            /**Phone, can only pass phone number**/
             ContentSetting contentphoneSetting0 = new ContentPhoneSetting(ESocailMsg.PHONE, "0755-86562490");
-            /**电话,传联系人姓名以及电话号码，最终显示的联系人姓名**/
-            ContentSetting contentphoneSetting1 = new ContentPhoneSetting(ESocailMsg.PHONE, "深圳市维亿魄科技有限公司", "0755-86562490");
+            /**Phone number, contact name and phone number**/
+            ContentSetting contentphoneSetting1 = new ContentPhoneSetting(ESocailMsg.PHONE, "Shenzhen Weiyibo Technology Co., Ltd.", "0755-86562490");
 
-            /**短信，可以只传电话号码**/
-            ContentSetting contentsmsSetting2 = new ContentSmsSetting(ESocailMsg.SMS, "0755-86562490", "公司研发的项目主要在医疗健康智能穿戴、智能家居、新型智能交友产品、飞机航模、智能安全锁五个领域方面");
-            /**短信，传联系人姓名以及电话号码，最终显示的联系人姓名**/
-            ContentSetting contentsmsSetting3 = new ContentSmsSetting(ESocailMsg.SMS, "深圳市维亿魄科技有限公司", "0755-86562490", "公司研发的项目主要在医疗健康智能穿戴、智能家居、新型智能交友产品、飞机航模、智能安全锁五个领域方面");
+            /**SMS, you can just send the phone number**/
+            ContentSetting contentsmsSetting2 = new ContentSmsSetting(ESocailMsg.SMS, "0755-86562490", "sms text");
+            /**Text message, contact name and phone number**/
+            ContentSetting contentsmsSetting3 = new ContentSmsSetting(ESocailMsg.SMS, "Shenzhen Weiyibo Technology Co., Ltd.", "0755-86562490", "text、智能家居、新型智能交友产品、飞机航模、智能安全锁五个领域方面");
 
-            /**第三方APP推送,发送前先通过密码验证获取FunctionSocailMsgData的状态**/
-            ContentSetting contentsociaSetting4 = new ContentSocailSetting(ESocailMsg.WECHAT, "veepoo", "公司研发的项目主要在医疗健康智能穿戴、智能家居、新型智能交友产品、飞机航模、智能安全锁五个领域方面");
+            /**Pushed by a third-party app. Get the status of FunctionSocailMsgData through password verification before sending.**/
+            ContentSetting contentsociaSetting4 = new ContentSocailSetting(ESocailMsg.WECHAT, "veepoo", "The company's research and development projects are mainly in five areas: medical and health smart wearables, smart homes, new smart dating products, aircraft models, and smart security locks.");
             VPOperateManager.getMangerInstance(mContext).sendSocialMsgContent(writeResponse, contentphoneSetting0);
         } else if (oprater.equals(SOCIAL_PHONE_IDLE_OR_OFFHOOK)) {
             VPOperateManager.getMangerInstance(mContext).offhookOrIdlePhone(writeResponse);
@@ -861,54 +861,54 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingDeviceControlPhone(new IDeviceControlPhoneModelState() {
                 @Override
                 public void inPttModel() {
-                    String message = "手表提示:手表进入ptt模式\n";
+                    String message = "Watch Tips: Watch Enters PTT Mode\n";
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void outPttModel() {
-                    String message = "手表提示:手表退出ptt模式\n";
+                    String message = "Watch tip: watch exits ptt mode\n";
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void rejectPhone() {
-                    String message = "手表提示:请挂断来电\n";
+                    String message = "Watch Tip: Please hang up the call\n";
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
 
                 @Override
                 public void cliencePhone() {
-                    String message = "手表提示:请来电静音\n";
+                    String message = "Watch Tip: Please mute the call\n";
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
 
                 @Override
                 public void knocknotify(int type) {
-                    String message = "手表提示:敲击提醒，1表示单击，2表示双击\n";
+                    String message = "Watch tips: tap reminder, 1 means click, 2 means double click\n";
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void sos() {
-                    String message = "手表提示:sos\n";
+                    String message = "Watch tips:sos\n";
                     Logger.t(TAG).i(message);
                 }
 
                 public void nextMusic() {
-                    String message = "手表提示:下一曲\n";
+                    String message = "Watch Tip: Next Song\n";
                     Logger.t(TAG).i(message);
                 }
 
                 public void previousMusic() {
-                    String message = "手表提示:上一曲\n";
+                    String message = "Watch Tips: Previous\n";
                     Logger.t(TAG).i(message);
                 }
 
                 public void pauseAndPlayMusic() {
-                    String message = "手表提示:暂停和播放\n";
+                    String message = "Watch Tips: Pause and Play\n";
                     Logger.t(TAG).i(message);
                 }
 
@@ -920,7 +920,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readHeartWarning(writeResponse, new IHeartWaringDataListener() {
                 @Override
                 public void onHeartWaringDataChange(HeartWaringData heartWaringData) {
-                    String message = "心率报警-读取:\n" + heartWaringData.toString();
+                    String message = "Heart rate alarm-read:\n" + heartWaringData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -929,7 +929,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingHeartWarning(writeResponse, new IHeartWaringDataListener() {
                 @Override
                 public void onHeartWaringDataChange(HeartWaringData heartWaringData) {
-                    String message = "心率报警-打开:\n" + heartWaringData.toString();
+                    String message = "Heart rate alarm-on:\n" + heartWaringData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -938,7 +938,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingHeartWarning(writeResponse, new IHeartWaringDataListener() {
                 @Override
                 public void onHeartWaringDataChange(HeartWaringData heartWaringData) {
-                    String message = "心率报警-关闭:\n" + heartWaringData.toString();
+                    String message = "Heart rate alarm-off:\n" + heartWaringData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -947,14 +947,14 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).startDetectSPO2H(writeResponse, new ISpo2hDataListener() {
                 @Override
                 public void onSpO2HADataChange(Spo2hData spo2HData) {
-                    String message = "血氧-开始:\n" + spo2HData.toString();
+                    String message = "SpO2-Start:\n" + spo2HData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
             }, new ILightDataCallBack() {
                 @Override
                 public void onGreenLightDataChange(int[] data) {
-                    String message = "血氧-光电信号:\n" + Arrays.toString(data);
+                    String message = "Blood oxygen-optical signal:\n" + Arrays.toString(data);
                     Logger.t(TAG).i(message);
                 }
             });
@@ -962,7 +962,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).stopDetectSPO2H(writeResponse, new ISpo2hDataListener() {
                 @Override
                 public void onSpO2HADataChange(Spo2hData spo2HData) {
-                    String message = "血氧-结束:\n" + spo2HData.toString();
+                    String message = "SpO2-End:\n" + spo2HData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -971,7 +971,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSpo2hAutoDetect(writeResponse, new IAllSetDataListener() {
                 @Override
                 public void onAllSetDataChangeListener(AllSetData allSetData) {
-                    String message = "血氧自动检测-读取\n" + allSetData.toString();
+                    String message = "SpO2 automatic detection-read\n" + allSetData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -982,7 +982,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingSpo2hAutoDetect(writeResponse, new IAllSetDataListener() {
                 @Override
                 public void onAllSetDataChangeListener(AllSetData allSetData) {
-                    String message = "血氧自动检测-打开\n" + allSetData.toString();
+                    String message = "Blood oxygen automatic detection-open\n" + allSetData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -993,7 +993,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingSpo2hAutoDetect(writeResponse, new IAllSetDataListener() {
                 @Override
                 public void onAllSetDataChangeListener(AllSetData allSetData) {
-                    String message = "血氧自动检测-打开\n" + allSetData.toString();
+                    String message = "Blood oxygen automatic detection-open\n" + allSetData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1002,7 +1002,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).startDetectFatigue(writeResponse, new IFatigueDataListener() {
                 @Override
                 public void onFatigueDataListener(FatigueData fatigueData) {
-                    String message = "疲劳度-开始:\n" + fatigueData.toString();
+                    String message = "Fatigue-Start:\n" + fatigueData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1011,7 +1011,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).stopDetectFatigue(writeResponse, new IFatigueDataListener() {
                 @Override
                 public void onFatigueDataListener(FatigueData fatigueData) {
-                    String message = "疲劳度-结束:\n" + fatigueData.toString();
+                    String message = "Fatigue-end:\n" + fatigueData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1020,7 +1020,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingWomenState(writeResponse, new IWomenDataListener() {
                 @Override
                 public void onWomenDataChange(WomenData womenData) {
-                    String message = "女性状态-设置:\n" + womenData.toString();
+                    String message = "Female status-set:\n" + womenData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1029,7 +1029,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readWomenState(writeResponse, new IWomenDataListener() {
                 @Override
                 public void onWomenDataChange(WomenData womenData) {
-                    String message = "女性状态-读取:\n" + womenData.toString();
+                    String message = "Female status-reading:\n" + womenData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1042,7 +1042,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingCountDown(writeResponse, countDownSetting, new ICountDownListener() {
                 @Override
                 public void OnCountDownDataChange(CountDownData countDownData) {
-                    String message = "倒计时-watch:\n" + countDownData.toString();
+                    String message = "Countdown-watch:\n" + countDownData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1051,7 +1051,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readCountDown(writeResponse, new ICountDownListener() {
                 @Override
                 public void OnCountDownDataChange(CountDownData countDownData) {
-                    String message = "倒计时-读取:\n" + countDownData.toString();
+                    String message = "Countdown-read:\n" + countDownData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1064,7 +1064,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingCountDown(writeResponse, countDownSetting, new ICountDownListener() {
                 @Override
                 public void OnCountDownDataChange(CountDownData countDownData) {
-                    String message = "倒计时-App:\n" + countDownData.toString();
+                    String message = "Countdown-App:\n" + countDownData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1074,11 +1074,11 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             intent.putExtra("isnewsportcalc", isNewSportCalc);
             startActivity(intent);
         } else if (oprater.equals(SCREEN_LIGHT_SETTING)) {
-            //默认的是【22:00-07:00】设置成2档，其他时间设置成4档，用户可以自定义
+            // The default setting is [22: 00-07: 00]. It is set to 2 levels, and other times is set to 4 levels. The user can customize it.
             VPOperateManager.getMangerInstance(mContext).settingScreenLight(writeResponse, new IScreenLightListener() {
                 @Override
                 public void onScreenLightDataChange(ScreenLightData screenLightData) {
-                    String message = "屏幕调节数据-设置:" + screenLightData.toString();
+                    String message = "Screen adjustment data-settings:" + screenLightData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1087,7 +1087,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readScreenLight(writeResponse, new IScreenLightListener() {
                 @Override
                 public void onScreenLightDataChange(ScreenLightData screenLightData) {
-                    String message = "屏幕调节数据-读取:" + screenLightData.toString();
+                    String message = "Screen Adjustment Data-Read:" + screenLightData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1096,7 +1096,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readScreenStyle(writeResponse, new IScreenStyleListener() {
                 @Override
                 public void onScreenStyleDataChange(ScreenStyleData screenLightData) {
-                    String message = "屏幕样式-读取:" + screenLightData.toString();
+                    String message = "Screen style-read:" + screenLightData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1106,7 +1106,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).settingScreenStyle(writeResponse, new IScreenStyleListener() {
                 @Override
                 public void onScreenStyleDataChange(ScreenStyleData screenLightData) {
-                    String message = "屏幕样式-设置:" + screenLightData.toString();
+                    String message = "Screen style-settings:" + screenLightData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
@@ -1122,9 +1122,9 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
                             String message = "";
                             if (sleepData instanceof SleepPrecisionData && isSleepPrecision) {
                                 SleepPrecisionData sleepPrecisionData = (SleepPrecisionData) sleepData;
-                                message = "精准睡眠数据-返回:" + sleepPrecisionData.toString();
+                                message = "Precision sleep data-back:" + sleepPrecisionData.toString();
                             } else {
-                                message = "普通睡眠数据-返回:" + sleepData.toString();
+                                message = "Normal Sleep Data-Return:" + sleepData.toString();
                             }
                             Logger.t(TAG).i(message);
                             sendMsg(message, 1);
@@ -1133,19 +1133,19 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
                         @Override
                         public void onSleepProgress(float progress) {
 
-                            String message = "睡眠数据-读取进度:" + "progress=" + progress;
+                            String message = "Sleep data-reading progress:" + "progress=" + progress;
                             Logger.t(TAG).i(message);
                         }
 
                         @Override
                         public void onSleepProgressDetail(String day, int packagenumber) {
-                            String message = "睡眠数据-读取进度:" + "day=" + day + ",packagenumber=" + packagenumber;
+                            String message = "Sleep data-reading progress:" + "day=" + day + ",packagenumber=" + packagenumber;
                             Logger.t(TAG).i(message);
                         }
 
                         @Override
                         public void onReadSleepComplete() {
-                            String message = "睡眠数据-读取结束";
+                                String message = "Sleep data-end of reading";
                             Logger.t(TAG).i(message);
                         }
                     }, watchDataDay
@@ -1155,26 +1155,26 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSleepDataFromDay(writeResponse, new ISleepDataListener() {
                         @Override
                         public void onSleepDataChange(SleepData sleepData) {
-                            String message = "睡眠数据-返回:" + sleepData.toString();
+                            String message = "Sleep data-return:" + sleepData.toString();
                             Logger.t(TAG).i(message);
                             sendMsg(message, 1);
                         }
 
                         @Override
                         public void onSleepProgress(float progress) {
-                            String message = "睡眠数据-读取进度:" + "progress=" + progress;
+                                String message = "Sleep data-reading progress:" + "progress=" + progress;
                             Logger.t(TAG).i(message);
                         }
 
                         @Override
                         public void onSleepProgressDetail(String day, int packagenumber) {
-                            String message = "睡眠数据-读取进度:" + "day=" + day + ",packagenumber=" + packagenumber;
+                            String message = "Sleep data-reading progress:" + "day=" + day + ",packagenumber=" + packagenumber;
                             Logger.t(TAG).i(message);
                         }
 
                         @Override
                         public void onReadSleepComplete() {
-                            String message = "睡眠数据-读取结束";
+                                String message = "Sleep data-end of reading";
                             Logger.t(TAG).i(message);
                         }
                     }
@@ -1184,20 +1184,20 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSleepDataSingleDay(writeResponse, new ISleepDataListener() {
                 @Override
                 public void onSleepDataChange(SleepData sleepData) {
-                    String message = "睡眠数据-返回:" + sleepData.toString();
+                    String message = "Sleep data-return:" + sleepData.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
 
                 @Override
                 public void onSleepProgress(float progress) {
-                    String message = "睡眠数据-读取进度:" + "progress=" + progress;
+                    String message = "sleep progress:" + "progress=" + progress;
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onSleepProgressDetail(String day, int packagenumber) {
-                    String message = "睡眠数据-读取进度:" + "day=" + day + ",packagenumber=" + packagenumber;
+                    String message = "sleep progress detail:" + "day=" + day + ",packagenumber=" + packagenumber;
                     Logger.t(TAG).i(message);
                 }
 
@@ -1211,14 +1211,14 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readDrinkData(writeResponse, new IDrinkDataListener() {
                 @Override
                 public void onDrinkDataChange(int packagenumber, DrinkData drinkdata) {
-                    String message = "饮酒数据-返回:" + drinkdata.toString();
+                    String message = "drink data back:" + drinkdata.toString();
                     Logger.t(TAG).i(message);
                     sendMsg(message, 1);
                 }
 
                 @Override
                 public void onReadDrinkComplete() {
-                    String message = "饮酒数据-读取结束";
+                    String message = "read drink completed";
                     Logger.t(TAG).i(message);
                 }
             });
@@ -1226,13 +1226,13 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readOriginData(writeResponse, new IOriginData3Listener() {
                 @Override
                 public void onOriginFiveMinuteListDataChange(List<OriginData3> originDataList) {
-                    String message = "健康数据-返回:" + originDataList.toString();
+                    String message = "Health data-returned:" + originDataList.toString();
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onOriginHalfHourDataChange(OriginHalfHourData originHalfHourDataList) {
-                    String message = "健康数据[30分钟]-返回:" + originHalfHourDataList.toString();
+                    String message = "Health data [30 minutes]-back:" + originHalfHourDataList.toString();
                     Logger.t(TAG).i(message);
                 }
 
@@ -1249,20 +1249,20 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onReadOriginProgress(float progress) {
-                    String message = "健康数据[5分钟]-读取进度:" + progress;
+                    String message = "Health data [5 minutes]-reading progress:" + progress;
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onReadOriginProgressDetail(int date, String dates, int all, int num) {
-                    String message = "健康数据[5分钟]-读取进度detail:" + date + ",dates=" + dates;
+                    String message = "Health data [5 minutes]-read progress detail:" + date + ",dates=" + dates;
                     Logger.t(TAG).i(message);
                 }
 
 
                 @Override
                 public void onReadOriginComplete() {
-                    String message = "健康数据-读取结束";
+                    String message = "Health data-end of reading";
                     Logger.t(TAG).i(message);
                 }
             }, 3);
@@ -1271,19 +1271,19 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readOriginDataFromDay(writeResponse, new IOriginDataListener() {
                 @Override
                 public void onOringinFiveMinuteDataChange(OriginData originData) {
-                    String message = "健康数据[5分钟]-返回:" + originData.toString();
+                    String message = "Health data [5 minutes]-back:" + originData.toString();
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onOringinHalfHourDataChange(OriginHalfHourData originHalfHourData) {
-                    String message = "健康数据[30分钟]-返回:" + originHalfHourData.toString();
+                        String message = "Health Data [30 minutes]-Return:" + originHalfHourData.toString();
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onReadOriginProgress(float progress) {
-                    String message = "健康数据[5分钟]-读取进度:" + progress;
+                    String message = "Health data [5 minutes]-reading progress:" + progress;
                     Logger.t(TAG).i(message);
                 }
 
@@ -1294,7 +1294,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onReadOriginComplete() {
-                    String message = "健康数据-读取结束";
+                    String message = "Health data-end of reading";
                     Logger.t(TAG).i(message);
                 }
             }, yesterday, 10, watchDataDay);
@@ -1304,19 +1304,19 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             IOriginProgressListener originDataListener = new IOriginDataListener() {
                 @Override
                 public void onOringinFiveMinuteDataChange(OriginData originData) {
-                    String message = "健康数据[5分钟]-返回:" + originData.toString();
+                    String message = "Health data [5 minutes]-back:" + originData.toString();
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onOringinHalfHourDataChange(OriginHalfHourData originHalfHourData) {
-                    String message = "健康数据[30分钟]-返回:" + originHalfHourData.toString();
+                    String message = "Health data [30 minutes]-back:" + originHalfHourData.toString();
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onReadOriginProgress(float progress) {
-                    String message = "健康数据[5分钟]-读取进度:" + progress;
+                    String message = "Health data [5 minutes]-reading progress:" + progress;
                     Logger.t(TAG).i(message);
                 }
 
@@ -1327,14 +1327,14 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onReadOriginComplete() {
-                    String message = "健康数据-读取结束";
+                    String message = "Health data-end of reading";
                     Logger.t(TAG).i(message);
                 }
             };
             IOriginProgressListener originData3Listener = new IOriginData3Listener() {
                 @Override
                 public void onOriginFiveMinuteListDataChange(List<OriginData3> originData3List) {
-                    String message = "健康数据[5分钟]-返回:" + originData3List.size();
+                    String message = "Health data [5 minutes]-back:" + originData3List.size();
 //                    for (int i = 0; i < originData3List.size(); i++) {
 //                        String s = originData3List.get(i).toString();
 //                        Logger.t(TAG).i(s);
@@ -1344,14 +1344,14 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onOriginHalfHourDataChange(OriginHalfHourData originHalfHourData) {
-                    String message = "健康数据[30分钟]-返回:" + originHalfHourData.toString();
+                    String message = "Health data [30 minutes]-back:" + originHalfHourData.toString();
                     Logger.t(TAG).i(message);
 
                 }
 
                 @Override
                 public void onOriginHRVOriginListDataChange(List<HRVOriginData> originHrvDataList) {
-                    String message = "健康数据[HRV]-返回:" + originHrvDataList.size();
+                    String message = "Health Data [HRV] -Return:" + originHrvDataList.size();
 //                    for (int i = 0; i < originHrvDataList.size(); i++) {
 //                        String s = originHrvDataList.get(i).toString();
 //                        Logger.t(TAG).i(s);
@@ -1361,7 +1361,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onOriginSpo2OriginListDataChange(List<Spo2hOriginData> originSpo2hDataList) {
-                    String message = "健康数据[Spo2h]-返回:" + originSpo2hDataList.size();
+                    String message = "Health Data [Spo2h] -Return:" + originSpo2hDataList.size();
                     Spo2hOriginUtil spo2hOriginUtil = new Spo2hOriginUtil(originSpo2hDataList);
                     List<Map<String, Float>> tenMinuteData = spo2hOriginUtil.getTenMinuteData(ESpo2hDataType.TYPE_SLEEP);
                     for (int i = 0; i < originSpo2hDataList.size(); i++) {
@@ -1378,13 +1378,13 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onReadOriginProgress(float progress) {
-                    String message = "健康数据[5分钟]-读取进度:" + progress;
+                    String message = "Health data [5 minutes]-reading progress:" + progress;
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onReadOriginComplete() {
-                    String message = "健康数据-读取结束";
+                    String message = "Health data-end of reading";
                     Logger.t(TAG).i(message);
                 }
             };
@@ -1436,7 +1436,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             }, watchDataDay);
         } else if (oprater.equals(OAD)) {
             if (deviceNumber < 0) {
-                Toast.makeText(mContext, "请先通过密码验证，获取版本号!", Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, "Please pass the password verification first to get the version number!", Toast.LENGTH_LONG).show();
                 return;
             }
             boolean isOadModel = getIntent().getBooleanExtra("isoadmodel", false);
@@ -1457,7 +1457,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).stopSportModel(writeResponse, new ISportModelStateListener() {
                 @Override
                 public void onSportModelStateChange(SportModelStateData sportModelStateData) {
-                    String message = "运动模式状态:" + sportModelStateData.toString();
+                    String message = "Sport mode status:" + sportModelStateData.toString();
                     Logger.t(TAG).i(message);
                 }
             });
@@ -1465,7 +1465,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSportModelState(writeResponse, new ISportModelStateListener() {
                 @Override
                 public void onSportModelStateChange(SportModelStateData sportModelStateData) {
-                    String message = "运动模式状态" + sportModelStateData.toString();
+                    String message = "Sport mode status" + sportModelStateData.toString();
                     Logger.t(TAG).i(message);
                 }
             });
@@ -1473,7 +1473,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).startSportModel(writeResponse, new ISportModelStateListener() {
                 @Override
                 public void onSportModelStateChange(SportModelStateData sportModelStateData) {
-                    String message = "运动模式状态" + sportModelStateData.toString();
+                    String message = "Sport mode status" + sportModelStateData.toString();
                     Logger.t(TAG).i(message);
                 }
             });
@@ -1481,27 +1481,27 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
             VPOperateManager.getMangerInstance(mContext).readSportModelOrigin(writeResponse, new ISportModelOriginListener() {
                 @Override
                 public void onReadOriginProgress(float progress) {
-                    String message = "运动模式数据[读取进度]:" + progress;
+                    String message = "Sports mode data [read progress]:" + progress;
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onReadOriginProgressDetail(int day, String date, int allPackage, int currentPackage) {
-                    String message = "运动模式数据[读取详情]:" + day +
+                    String message = "Sports mode data [read details]:" + day +
                             ",allPackage=" + allPackage + ",currentPackage=" + currentPackage;
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onHeadChangeListListener(SportModelOriginHeadData sportModelHeadData) {
-                    String message = "运动模式数据[头部]:" + sportModelHeadData.toString();
+                    String message = "Motion pattern data [head]:" + sportModelHeadData.toString();
                     Logger.t(TAG).i(message);
                 }
 
                 @Override
                 public void onItemChangeListListener(List<SportModelOriginItemData> sportModelItemData) {
                     StringBuffer message = new StringBuffer();
-                    message.append("运动模式数据[详细]:");
+                    message.append("Sports mode data [detailed]:");
                     for (SportModelOriginItemData sportModelOriginItemData : sportModelItemData) {
                         message.append("\n");
                         message.append(sportModelOriginItemData.toString());
@@ -1512,7 +1512,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onReadOriginComplete() {
-                    String message = "运动模式数据[读取结束]";
+                    String message = "Sports mode data [read end]";
                     Logger.t(TAG).i(message);
                 }
             });
@@ -1628,7 +1628,7 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
     }
 
     /**
-     * 写入的状态返回
+     * Write status returned
      */
     class WriteResponse implements IBleWriteResponse {
 
@@ -1641,8 +1641,8 @@ public class OperaterActivity extends Activity implements AdapterView.OnItemClic
 
     /**
      *
-     * 	密码验证之前，要调用这个方法
-     * 	因为在密码验证之后，inPttModel/outPttModel其中一个会有回调
+     * 	Call this method before password verification
+     *       * Because after password verification, one of inPttModel / outPttModel will have a callback
      */
     public void listenDeviceCallbackData() {
         VPOperateManager.getMangerInstance(mContext).settingDeviceControlPhone(new IDeviceControlPhoneModelState() {

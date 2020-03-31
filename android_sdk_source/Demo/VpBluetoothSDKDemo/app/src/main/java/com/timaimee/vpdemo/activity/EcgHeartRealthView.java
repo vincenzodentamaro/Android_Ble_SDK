@@ -20,7 +20,7 @@ import java.util.List;
 
 
 /**
- * ECG报告测量页面
+ * ECG report measurement page
  * Created by Administrator on 2018/11/5.
  */
 
@@ -235,6 +235,7 @@ public class EcgHeartRealthView extends View {
 
     /**
      * 清除以及初始化数据（600个点的计算列表，数据回放的点，）
+     * Clear and initialize data (calculation list of 600 points, points for data playback,)
      */
     public void clearData() {
         linePositionX = 0;
@@ -245,23 +246,23 @@ public class EcgHeartRealthView extends View {
 
     List<Integer> arraylist = new ArrayList<>();
 
-    //采样率&走速
+    //Sampling rate & walking speed
     int HZ = 250;
     int SPEED = 25;
-    //一个格子多少个点
+    //How many points are in a grid
     int count = HZ / SPEED;
-    //纵向一共放多少个格子
+    //How many grids are placed vertically
     int coumlnQutoCount = 16 * 5;
-    //一个格子的高度
+    //Height of a grid
     float coumlnQutoWidth = 1;
-    //横向一共放多少格子
+    //How many grids are placed horizontally
     float rowQutoCount = 1;
-    //一个格子的宽度
+    //The width of a grid
     float rowQutoWidth = 1;
-    //横向一共放多少个点
+    //How many dots are placed horizontally
 
     int rowEcgCount = 1;
-    //一个点的宽度
+    //Width of a point
     float rowEcgWidth = 1;
 
     private void onPagerSetting() {

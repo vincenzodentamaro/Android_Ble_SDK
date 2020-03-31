@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demo-VpBluetoothSDKDemo.iml" filepath="$PROJECT_DIR$/Demo-VpBluetoothSDKDemo.iml" group="VpBluetoothSDKDemo" />
       <module fileurl="file://$PROJECT_DIR$/VpBluetoothSDKDemo.iml" filepath="$PROJECT_DIR$/VpBluetoothSDKDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/VpBluetoothSDKDemo-app.iml" filepath="$PROJECT_DIR$/app/VpBluetoothSDKDemo-app.iml" group="VpBluetoothSDKDemo/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/vpbluetooth/vpbluetooth.iml" filepath="$PROJECT_DIR$/vpbluetooth/vpbluetooth.iml" />
       <module fileurl="file://$PROJECT_DIR$/vpprotocol/vpprotocol.iml" filepath="$PROJECT_DIR$/vpprotocol/vpprotocol.iml" />

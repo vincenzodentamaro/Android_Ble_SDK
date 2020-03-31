@@ -178,7 +178,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
         }
 
         if (!BluetoothUtils.isBluetoothEnabled()) {
-            Toast.makeText(mContext, "蓝牙没有开启", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Bluetooth is not turned on", Toast.LENGTH_SHORT).show();
             return true;
         }
         mVpoperateManager.startScanDevice(mSearchResponse);
@@ -196,11 +196,11 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
             public void connectState(int code, BleGattProfile profile, boolean isoadModel) {
                 if (code == Code.REQUEST_SUCCESS) {
                     //蓝牙与设备的连接状态
-                    Logger.t(TAG).i("连接成功");
-                    Logger.t(TAG).i("是否是固件升级模式=" + isoadModel);
+                    Logger.t(TAG).i("connection succeeded");
+                    Logger.t(TAG).i("Whether it is firmware upgrade mode=" + isoadModel);
                     mIsOadModel = isoadModel;
                 } else {
-                    Logger.t(TAG).i("连接失败");
+                    Logger.t(TAG).i("Connection failed");
                 }
             }
         }, new INotifyResponse() {
@@ -208,14 +208,14 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
             public void notifyState(int state) {
                 if (state == Code.REQUEST_SUCCESS) {
                     //蓝牙与设备的连接状态
-                    Logger.t(TAG).i("监听成功-可进行其他操作");
+                    Logger.t(TAG).i("Monitoring success-other operations available");
 
                     Intent intent = new Intent(mContext, OperaterActivity.class);
                     intent.putExtra("isoadmodel", mIsOadModel);
                     intent.putExtra("deviceaddress", mac);
                     startActivity(intent);
                 } else {
-                    Logger.t(TAG).i("监听失败，重新连接");
+                    Logger.t(TAG).i("Failed to listen, reconnect");
                 }
 
             }
@@ -224,7 +224,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 
 
     /**
-     * 蓝牙打开or关闭状态
+     * Bluetooth on or off
      */
     private void registerBluetoothStateListener() {
         mVpoperateManager.registerBluetoothStateListener(mBluetoothStateListener);
@@ -232,7 +232,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 
 
     /**
-     * 监听系统蓝牙的打开和关闭的回调状态
+     * Monitor the callback status of the system Bluetooth on and off
      */
     private final IABleConnectStatusListener mBleConnectStatusListener = new IABleConnectStatusListener() {
 
@@ -247,7 +247,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
     };
 
     /**
-     * 监听蓝牙与设备间的回调状态
+     * Listen for the callback status between Bluetooth and the device
      */
     private final IABluetoothStateListener mBluetoothStateListener = new IABluetoothStateListener() {
         @Override
@@ -258,7 +258,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 
 
     /**
-     * 扫描的回调
+     * Scan callback
      */
     private final SearchResponse mSearchResponse = new SearchResponse() {
         @Override
@@ -329,7 +329,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
     }
 
     /**
-     * 检测蓝牙设备是否开启
+     * Detect if Bluetooth device is on
      *
      * @return
      */
@@ -344,7 +344,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
     }
 
     /**
-     * 结束刷新
+     * End refresh
      */
     void refreshStop() {
         Logger.t(TAG).i("refreshComlete");
@@ -358,7 +358,7 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(mContext, "正在连接，请稍等...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Connecting, please wait...", Toast.LENGTH_SHORT).show();
             }
         });
         SearchResult searchResult = mListData.get(position);
